@@ -1,5 +1,7 @@
 import os
-from selenium import webdriver
+import logging
+from pyvirtualdisplay import Display
+from selenium.webdriver import Firefox
 
 def logIn(driver):  
     emailElem = findElementByIdSafe(driver, "sender-email")
@@ -22,7 +24,13 @@ def findElementBynameSafe(driver, name: str):
         EC.presence_of_element_located((By.NAME, "name"))
     )
 
-driver = selenium.Firefox()
-diver.get("https://pepup.life/users/sign_in")
+logging.getLogger().setLevel(logging.INFO)
 
-logIn(driver)
+display = Display(visible=0, size=(800, 600))
+display.start()
+
+driver = Firefox()
+driver.get("https://pepup.life/users/sign_in")
+logging.info('Page title: %s', driver.title)
+
+display.stop()
