@@ -21,4 +21,4 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
           
     - name: Run docker
-      run: docker run ${{ env.IMAGE_NAME }}
+      run: docker run -e USER_EMAIL=${{ secrets.USER_EMAIL }} -e USER_PASS=${{ secrets.USER_PASS }} ${{ env.IMAGE_NAME }}
