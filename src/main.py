@@ -1,5 +1,5 @@
 import logging
-from actions import log_in
+from actions import input_steps, input_temp, input_weight, log_in
 from pyvirtualdisplay import Display
 from selenium.webdriver import Firefox
 
@@ -11,5 +11,8 @@ display.start()
 driver = Firefox()
 
 log_in(driver)
+input_temp(driver, "36.7")
+input_weight(driver, "75")
+input_steps(driver, "8000")
 
 display.stop()
