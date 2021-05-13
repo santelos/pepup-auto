@@ -17,7 +17,6 @@ def log_in(driver):
 
 def input_temp(driver, temp: str):
     driver.get("https://pepup.life/daily_records/diary")
-    driver.implicitly_wait(10)
 
     temp_elem = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")[0]
     temp_elem.click()
@@ -25,7 +24,11 @@ def input_temp(driver, temp: str):
     temp_input_element.send_keys(temp)
     temp_input_submit = find_element_by_css_safe(driver, ".sc-1nyioy8-2.gdKtya")[0]
     temp_input_submit.click()
-    logging.info("Temp finished")
+
+    check_element = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")[0]
+    if check_element.text != temp:
+        raise RuntimeError(f"Temp value input error. Sould be [{temp}], but found [{check_element.text}]")
+    logging.info(f"Temp finished. Value: [{check_element.text}]")
 
 def input_weight(driver, weight: str):
     driver.get("https://pepup.life/daily_records/diary")
@@ -36,7 +39,11 @@ def input_weight(driver, weight: str):
     weight_input_element.send_keys(weight)
     weight_input_submit = find_element_by_css_safe(driver, ".sc-1nyioy8-2.gdKtya")[0]
     weight_input_submit.click()
-    logging.info("Weight finished")
+    
+    check_element = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")[1]
+    if check_element.text != weight:
+        raise RuntimeError(f"Weight value input error. Sould be [{weight}], but found [{check_element.text}]")
+    logging.info(f"Weight finished. Value: [{check_element.text}]")
 
 def input_steps(driver, steps: str):
     driver.get("https://pepup.life/daily_records/diary")
@@ -47,4 +54,8 @@ def input_steps(driver, steps: str):
     steps_input_element.send_keys(steps)
     steps_input_submit = find_element_by_css_safe(driver, ".sc-1nyioy8-2.gdKtya")[0]
     steps_input_submit.click()
-    logging.info("Steps finished")
+
+    check_element = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")[2]
+    if check_element.text != steps:
+        raise RuntimeError(f"Steps value input error. Sould be [{steps}], but found [{check_element.text}]")
+    logging.info(f"Steps finished. Value: [{check_element.text}]")

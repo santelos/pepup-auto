@@ -12,7 +12,7 @@ driver = Firefox()
 
 log_in(driver)
 input_temp(driver, "36.7")
-input_weight(driver, "75")
+input_weight(driver, "75.0")
 input_steps(driver, "8000")
 
 display.stop()
