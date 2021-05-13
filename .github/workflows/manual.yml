@@ -2,7 +2,7 @@ name: Scheduled
 
 on:
   schedule:
-    - cron:  '0 2 * * *'
+    - cron:  '0 3 * * *'
 
 env:
   IMAGE_NAME: ghcr.io/${{ github.repository }}:latest
