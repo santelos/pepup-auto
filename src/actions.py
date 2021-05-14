@@ -18,8 +18,11 @@ def log_in(driver):
 def input_temp(driver, temp: str):
     driver.get("https://pepup.life/daily_records/diary")
     driver.implicitly_wait(20)
-
-    temp_elem = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")[0]
+    
+    elements = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")
+    logging.info(f"Temp len: [{len(elements)}]")
+                 
+    temp_elem = elements[0]
     temp_elem.click()
     driver.implicitly_wait(20)
     temp_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
@@ -37,7 +40,10 @@ def input_weight(driver, weight: str):
     driver.get("https://pepup.life/daily_records/diary")
     driver.implicitly_wait(20)
     
-    weight_elem = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")[1]
+    elements = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")
+    logging.info(f"Weight len: [{len(elements)}]")
+    
+    weight_elem = elements[1]
     weight_elem.click()
     driver.implicitly_wait(20)
     weight_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
@@ -55,7 +61,10 @@ def input_steps(driver, steps: str):
     driver.get("https://pepup.life/daily_records/diary")
     driver.implicitly_wait(20)
     
-    steps_elem = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")[4]
+    elements = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")
+    logging.info(f"Weight len: [{len(elements)}]")
+    
+    steps_elem = elements[4]
     steps_elem.click()
     driver.implicitly_wait(20)
     steps_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
