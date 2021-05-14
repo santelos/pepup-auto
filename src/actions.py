@@ -24,22 +24,15 @@ def input_temp(driver, temp: str):
     temp_elem.click()
     time.sleep(10)
     
-    logging.info(find_element_by_css_safe(driver, ".sc-9jpzzc-1.cidXjo")[0].text)
-    
     temp_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
     temp_input_element.send_keys(temp)
     time.sleep(10)
-    
-    logging.info(find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0].get_attribute("value"))
     
     temp_input_submit = find_element_by_css_safe(driver, ".sc-1nyioy8-2.gdKtya")[0]
     temp_input_submit.click()
     time.sleep(10)
 
-    check_elements = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")
-    for x in check_elements:
-        logging.info(x.text)
-    check_element = check_elements[0]
+    check_element = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")[0]
     if check_element.text != temp:
         raise RuntimeError(f"Temp value input error. Sould be [{temp}], but found [{check_element.text}]")
     logging.info(f"Temp finished. Value: [{check_element.text}]")
@@ -52,22 +45,15 @@ def input_weight(driver, weight: str):
     weight_elem.click()
     time.sleep(10)
     
-    logging.info(find_element_by_css_safe(driver, ".sc-9jpzzc-1.cidXjo")[0].text)
-    
     weight_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
     weight_input_element.send_keys(weight)
     time.sleep(10)
-    
-    logging.info(find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0].get_attribute("value"))
     
     weight_input_submit = find_element_by_css_safe(driver, ".sc-1nyioy8-2.gdKtya")[0]
     weight_input_submit.click()
     time.sleep(10)
     
-    check_elements = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")
-    for x in check_elements:
-        logging.info(x.text)
-    check_element = check_elements[1]
+    check_element = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")[1]
     if check_element.text != weight:
         raise RuntimeError(f"Weight value input error. Sould be [{weight}], but found [{check_element.text}]")
     logging.info(f"Weight finished. Value: [{check_element.text}]")
@@ -80,22 +66,15 @@ def input_steps(driver, steps: str):
     steps_elem.click()
     time.sleep(10)
     
-    logging.info(find_element_by_css_safe(driver, ".sc-9jpzzc-1.cidXjo")[0].text)
-    
     steps_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
     steps_input_element.send_keys(steps)
     time.sleep(10)
-    
-    logging.info(find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0].get_attribute("value"))
     
     steps_input_submit = find_element_by_css_safe(driver, ".sc-1nyioy8-2.gdKtya")[0]
     steps_input_submit.click()
     time.sleep(10)
 
-    check_elements = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")
-    for x in check_elements:
-        logging.info(x.text)
-    check_element = check_elements[2]
+    check_element = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")[2]
     if check_element.text != steps:
         raise RuntimeError(f"Steps value input error. Sould be [{steps}], but found [{check_element.text}]")
     logging.info(f"Steps finished. Value: [{check_element.text}]")
