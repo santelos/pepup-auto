@@ -17,14 +17,16 @@ def log_in(driver):
 
 def input_temp(driver, temp: str):
     driver.get("https://pepup.life/daily_records/diary")
+    driver.implicitly_wait(20)
 
     temp_elem = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")[0]
     temp_elem.click()
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(20)
     temp_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
     temp_input_element.send_keys(temp)
     temp_input_submit = find_element_by_css_safe(driver, ".sc-1nyioy8-2.gdKtya")[0]
     temp_input_submit.click()
+    driver.implicitly_wait(20)
 
     check_element = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")[0]
     if check_element.text != temp:
@@ -33,14 +35,16 @@ def input_temp(driver, temp: str):
 
 def input_weight(driver, weight: str):
     driver.get("https://pepup.life/daily_records/diary")
+    driver.implicitly_wait(20)
     
     weight_elem = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")[1]
     weight_elem.click()
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(20)
     weight_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
     weight_input_element.send_keys(weight)
     weight_input_submit = find_element_by_css_safe(driver, ".sc-1nyioy8-2.gdKtya")[0]
     weight_input_submit.click()
+    driver.implicitly_wait(20)
     
     check_element = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")[1]
     if check_element.text != weight:
@@ -49,14 +53,16 @@ def input_weight(driver, weight: str):
 
 def input_steps(driver, steps: str):
     driver.get("https://pepup.life/daily_records/diary")
+    driver.implicitly_wait(20)
     
     steps_elem = find_element_by_css_safe(driver, ".sc-1ejhwgd-7.kGMvLc")[4]
     steps_elem.click()
-    driver.implicitly_wait(2)
+    driver.implicitly_wait(20)
     steps_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
     steps_input_element.send_keys(steps)
     steps_input_submit = find_element_by_css_safe(driver, ".sc-1nyioy8-2.gdKtya")[0]
     steps_input_submit.click()
+    driver.implicitly_wait(20)
 
     check_element = find_element_by_css_safe(driver, ".sc-1ejhwgd-9.kelHZY")[2]
     if check_element.text != steps:
