@@ -27,6 +27,7 @@ def input_temp(driver, temp: str):
     
     temp_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
     temp_input_element.send_keys(temp)
+    driver.implicitly_wait(20)
     
     logging.info(find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0].get_attribute("value"))
     
@@ -54,6 +55,7 @@ def input_weight(driver, weight: str):
     
     weight_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
     weight_input_element.send_keys(weight)
+    driver.implicitly_wait(20)
     
     logging.info(find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0].get_attribute("value"))
     
@@ -81,6 +83,7 @@ def input_steps(driver, steps: str):
     
     steps_input_element = find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0]
     steps_input_element.send_keys(steps)
+    driver.implicitly_wait(20)
     
     logging.info(find_element_by_css_safe(driver, ".sc-9jpzzc-3.eZoVle")[0].get_attribute("value"))
     
