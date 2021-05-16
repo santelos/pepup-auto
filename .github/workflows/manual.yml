@@ -20,7 +20,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
           
-    - name: Run docker for P
+    - name: Run for P
       run: docker run -e USER_EMAIL=${{ secrets.USER_EMAIL }} -e USER_PASS=${{ secrets.USER_PASS }} ${{ env.IMAGE_NAME }}
   
   r-run:
@@ -34,5 +34,5 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
           
-    - name: Run docker for P
+    - name: Run for R
       run: docker run -e USER_EMAIL=${{ secrets.RICH_USER_EMAIL }} -e USER_PASS=${{ secrets.RICH_USER_PASS }} ${{ env.IMAGE_NAME }}
