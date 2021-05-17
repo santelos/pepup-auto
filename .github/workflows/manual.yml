@@ -9,33 +9,33 @@ env:
   IMAGE_NAME: ghcr.io/${{ github.repository }}:latest
 
 jobs:
-#  p-run:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#    - name: Login to GitHub Container Registry
-#      uses: docker/login-action@v1
-#      with:
-#        registry: ghcr.io
-#        username: ${{ github.actor }}
-#        password: ${{ secrets.GITHUB_TOKEN }}
-#          
-#    - name: Run for P
-#      run: docker run -e USER_EMAIL='${{ secrets.USER_EMAIL }}' -e USER_PASS='${{ secrets.USER_PASS }}' ${{ env.IMAGE_NAME }}
-#  
-#  r-run:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#    - name: Login to GitHub Container Registry
-#      uses: docker/login-action@v1
-#      with:
-#        registry: ghcr.io
-#        username: ${{ github.actor }}
-#        password: ${{ secrets.GITHUB_TOKEN }}
-#          
-#    - name: Run for R
-#      run: docker run -e USER_EMAIL='${{ secrets.RICH_USER_EMAIL }}' -e USER_PASS='${{ secrets.RICH_USER_PASS }}' ${{ env.IMAGE_NAME }}
+  p-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+          
+    - name: Run for P
+      run: docker run -e USER_EMAIL='${{ secrets.USER_EMAIL }}' -e USER_PASS='${{ secrets.USER_PASS }}' ${{ env.IMAGE_NAME }}
+  
+  r-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+          
+    - name: Run for R
+      run: docker run -e USER_EMAIL='${{ secrets.RICH_USER_EMAIL }}' -e USER_PASS='${{ secrets.RICH_USER_PASS }}' ${{ env.IMAGE_NAME }}
 
   a-run:
     runs-on: ubuntu-latest
