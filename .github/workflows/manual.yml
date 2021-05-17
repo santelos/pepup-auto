@@ -21,7 +21,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
           
     - name: Run for P
-      run: docker run -e USER_EMAIL=${{ secrets.USER_EMAIL }} -e USER_PASS=${{ secrets.USER_PASS }} ${{ env.IMAGE_NAME }}
+      run: docker run -e USER_EMAIL='${{ secrets.USER_EMAIL }}' -e USER_PASS='${{ secrets.USER_PASS }}' ${{ env.IMAGE_NAME }}
   
   r-run:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
           
     - name: Run for R
-      run: docker run -e USER_EMAIL=${{ secrets.RICH_USER_EMAIL }} -e USER_PASS=${{ secrets.RICH_USER_PASS }} ${{ env.IMAGE_NAME }}
+      run: docker run -e USER_EMAIL='${{ secrets.RICH_USER_EMAIL }}' -e USER_PASS='${{ secrets.RICH_USER_PASS }}' ${{ env.IMAGE_NAME }}
 
   a-run:
     runs-on: ubuntu-latest
@@ -49,4 +49,4 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
           
     - name: Run for A
-      run: docker run -e USER_EMAIL=${{ secrets.ADR_USER_EMAIL }} -e USER_PASS=${{ secrets.ADR_USER_PASS }} ${{ env.IMAGE_NAME }}
+      run: docker run -e USER_EMAIL='${{ secrets.ADR_USER_EMAIL }}' -e USER_PASS='${{ secrets.ADR_USER_PASS }}' ${{ env.IMAGE_NAME }}
